@@ -61,6 +61,33 @@ const albums = [
     image: require("../../assets/images/spotifyImages/albums/SabrinaCarpenter.jpg"),
   }
 ];
+const favoriteArtists = [
+  {
+    id: "1",
+    name: "The Weeknd",
+    image: require("../../assets/images/spotifyImages/artists/TheWeeknd.jpg"),
+  },
+  {
+    id: "2",
+    name: "Taylor Swift",
+    image: require("../../assets/images/spotifyImages/artists/TaylorSwift.jpg"),
+  },
+  {
+    id: "3",
+    name: "Shawn Mendes",
+    image: require("../../assets/images/spotifyImages/artists/ShawnMendes.jpg"),
+  },
+  {
+    id: "4",
+    name: "Marshmello",
+    image: require("../../assets/images/spotifyImages/artists/MarshMello.jpg"),
+  },
+  {
+    id: "5",
+    name: "Bruno Mars",
+    image: require("../../assets/images/spotifyImages/artists/BrunoMars.jpg"),
+  },
+];
 export default function HomeScreen() {
   return (
     <ScrollView showsVerticalScrollIndicator={true} style={styles.body} >
@@ -94,7 +121,7 @@ export default function HomeScreen() {
 
         <ScrollView horizontal >{/* radioes */}
           {radios.map((radio) => (
-            <View style={styles.radioSection}>
+            <View key={radio.id} style={styles.radioSection}>
               <Image source={radio.image} style={styles.imageRadio} />
               <Text style={styles.textRadio}>{radio.artists}</Text>
             </View>
@@ -104,13 +131,21 @@ export default function HomeScreen() {
         <Text style={[styles.textHeading, { marginTop: 20, marginBottom: 20 }]}>Popular albums and singles</Text>
         <ScrollView horizontal> {/* Albums section */}
           {albums.map((album) => (
-            <View style={styles.albumSection}>
+            <View key={album.id} style={styles.albumSection}>
               <Image source={album.image} style={styles.imageAlbum} />
               <Text style={styles.textAlbum}>{album.author}</Text>
             </View>
           ))}
         </ScrollView>
         <Text style={[styles.textHeading, { marginTop: 20, marginBottom: 20 }]}>Your favourite artists</Text>
+        <ScrollView horizontal> {/*Favourite Artists section */}
+          {favoriteArtists.map((favoriteArtist) => (
+            <View key={favoriteArtist.id} style={styles.artistSection}>
+              <Image source={favoriteArtist.image} style={styles.artistImage} />
+              <Text style={styles.artistName}>{favoriteArtist.name}</Text>
+            </View>
+          ))}
+        </ScrollView>
       </View >
     </ScrollView >
   );
@@ -202,5 +237,24 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginLeft: 11,
     marginTop: 10,
+  },
+  artistSection: {
+    width: 220,
+    height: 250,
+
+  },
+  artistImage: {
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    marginLeft: 11,
+  },
+  artistName: {
+    marginTop: 10,
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 14,
+    textAlign: "center",
+
   }
 });
