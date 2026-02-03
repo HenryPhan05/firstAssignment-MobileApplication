@@ -122,7 +122,7 @@ export default function HomeScreen() {
                   <Text style={styles.textNameSong}>{song.nameSong}</Text>
                   <Text style={styles.textAuthor}>{song.author}</Text>
                 </View>
-                <Text style={{ color: "#bebcbc", marginRight: 10, fontSize: 25 }}>...</Text>
+                <Text style={{ color: "#bebcbc", marginRight: 10, fontSize: 25 }}>···</Text>
               </View>
             ))
           }
@@ -186,6 +186,7 @@ const styles = StyleSheet.create({
     color: "black",
     padding: 5,
     borderRadius: 100,
+    textAlign: 'center',
   },
   backGroundButtonNonSelectedHeader: {
     backgroundColor: "#474747",
