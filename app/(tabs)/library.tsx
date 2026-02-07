@@ -13,8 +13,8 @@ export default function LibraryTab() {
   const artists = [
     {
       id: "1",
-      name: "The Weeknd",
-      image: require("../../assets/images/spotifyImages/artists/TheWeeknd.jpg"),
+      name: "The Weekend",
+      image: require("../../assets/images/spotifyImages/artists/TheWeekend.jpg"),
       job: 'artist',
     },
     {
