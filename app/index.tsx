@@ -1,15 +1,27 @@
-import { Text, View } from "react-native";
+/**
+ * My To Do List App
+ *
+ * @format
+ */
 
-export default function Index() {
+import React from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Text,
+} from 'react-native';
+
+import ToDoList from './ToDoList';
+import ToDoForm from './ToDoForm';
+
+function App(): JSX.Element {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Back to see the spotify-clone</Text>
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <ToDoList />
+      <ToDoForm />
+    </SafeAreaView>
   );
 }
+
+export default App;
